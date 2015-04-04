@@ -1,2 +1,5 @@
-<h1>Clients#show</h1>
-<p>Find me in app/views/clients/show.html.erb</p>
+<h3><%= @client.name %></h3>
+<p><%= @client.titleXIX %></p>
+
+<%= link_to 'Edit Client', edit_client_path %>
+<%= link_to 'Delete Client', client_path, method: :delete %>
