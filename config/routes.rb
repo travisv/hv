@@ -1,8 +1,9 @@
 Hv::Application.routes.draw do
   root to: 'static_pages#home'
   resources :clients do
-    resources :homevisits
+    resources :homevisits, only: [:new, :create, :edit, :update, :destroy]
   end
+  resources :homevisits, only: :index
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,5 +1,5 @@
 class HomevisitsController < ApplicationController
-  before_action :find_client
+  before_action :find_client, except: :index
 
   def new
     @homevisit = @client.homevisits.new
