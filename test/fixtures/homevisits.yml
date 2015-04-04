@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  departure_date: 2015-04-04
+  return_date: 2015-04-04
+  client_id: 
+
+two:
+  departure_date: 2015-04-04
+  return_date: 2015-04-04
+  client_id: 

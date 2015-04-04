@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150404044303) do
+ActiveRecord::Schema.define(version: 20150404074100) do
 
   create_table "clients", force: true do |t|
     t.string   "name"
@@ -19,5 +19,15 @@ ActiveRecord::Schema.define(version: 20150404044303) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "homevisits", force: true do |t|
+    t.date     "departure_date"
+    t.date     "return_date"
+    t.integer  "client_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "homevisits", ["client_id"], name: "index_homevisits_on_client_id"
 
 end
