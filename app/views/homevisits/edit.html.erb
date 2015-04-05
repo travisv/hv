@@ -1,0 +1,19 @@
+<h1 class='text-center'>Edit Homevisit</h1>
+<div class='row'>
+  <div class='col-md-6 col-md-offset-3'>
+    <%= form_for([@client, @homevisit]) do |f| %>
+      <%= render 'shared/error_messages' %>
+      <div class='text-center'><%= f.label :client, @client.name %></div>
+
+      <%= f.label :Departure_date %>
+      <%= f.date_field :departure_date, class: 'form-control' %>
+
+      <%= f.label :Return_date %>
+      <%= f.date_field :return_date, class: 'form-control' %>
+
+      <div class='text-center hv'>
+      <%= f.submit "Update Homevisit", class: 'btn btn-sm btn-danger' %>
+      </div>
+    <% end %>
+  </div>
+</div>

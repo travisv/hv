@@ -28,6 +28,12 @@ class HomevisitsController < ApplicationController
 
   def update
     @homevisit.update(homevisit_params)
+    if @homevisit.save
+      flash[:success] = 'Homevisit Successfully Updated'
+      redirect_to homevisits_path
+    else
+      render 'edit'
+    end
   end
 
   def destroy
