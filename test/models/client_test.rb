@@ -18,7 +18,7 @@ class ClientTest < ActiveSupport::TestCase
   end
 
   test 'client should be invalid with improper titleXIX format' do
-    invalid_titleXIX = %w[ 123456A 123ADFS 1234567a A1234567 ]
+    invalid_titleXIX = %w(123456A 123ADFS 1234567a A1234567)
     invalid_titleXIX.each do |invalid|
       @client.titleXIX = invalid
     end
@@ -26,7 +26,7 @@ class ClientTest < ActiveSupport::TestCase
   end
 
   test 'client should be valid with proper titleXIX format' do
-    valid_titleXIX = %w[ 1234567A 3420952Z 9823111G 0000000S ]
+    valid_titleXIX = %w(1234567A 3420952Z 9823111G 0000000S)
     valid_titleXIX.each do |valid|
       @client.titleXIX = valid
     end

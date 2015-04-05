@@ -11,32 +11,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150405083034) do
-
-  create_table "beddays", force: true do |t|
-    t.integer  "remaining",  default: 30
-    t.integer  "client_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+ActiveRecord::Schema.define(version: 20_150_405_083_034) do
+  create_table 'beddays', force: true do |t|
+    t.integer 'remaining',  default: 30
+    t.integer 'client_id'
+    t.datetime 'created_at'
+    t.datetime 'updated_at'
   end
 
-  add_index "beddays", ["client_id"], name: "index_beddays_on_client_id"
+  add_index 'beddays', ['client_id'], name: 'index_beddays_on_client_id'
 
-  create_table "clients", force: true do |t|
-    t.string   "name"
-    t.string   "titleXIX"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+  create_table 'clients', force: true do |t|
+    t.string 'name'
+    t.string 'titleXIX'
+    t.datetime 'created_at'
+    t.datetime 'updated_at'
   end
 
-  create_table "homevisits", force: true do |t|
-    t.date     "departure_date"
-    t.date     "return_date"
-    t.integer  "client_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+  create_table 'homevisits', force: true do |t|
+    t.date 'departure_date'
+    t.date 'return_date'
+    t.integer 'client_id'
+    t.datetime 'created_at'
+    t.datetime 'updated_at'
   end
 
-  add_index "homevisits", ["client_id"], name: "index_homevisits_on_client_id"
-
+  add_index 'homevisits', ['client_id'], name: 'index_homevisits_on_client_id'
 end

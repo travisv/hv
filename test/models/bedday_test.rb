@@ -5,7 +5,7 @@ class BeddayTest < ActiveSupport::TestCase
     @client = Client.create!(name: 'Example User', titleXIX: '1234567A')
     @bedday = @client.create_bedday
     @homevisit = @client.homevisits.new(departure_date: '2000-1-1',
-                                           return_date: '2000-1-3')
+                                        return_date: '2000-1-3')
   end
 
   test 'Default Bed days should be 30' do
@@ -17,4 +17,3 @@ class BeddayTest < ActiveSupport::TestCase
     assert_equal 28, @bedday.remaining
   end
 end
-

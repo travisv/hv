@@ -4,7 +4,7 @@ class HomevisitTest < ActiveSupport::TestCase
   def setup
     @client = Client.create!(name: 'Example User', titleXIX: '1234567A')
     @homevisit = @client.homevisits.build(departure_date: '2000-01-01',
-                             return_date: '2000-01-03', client_id: @client.id)
+                                          return_date: '2000-01-03', client_id: @client.id)
   end
 
   test 'homevisit should be valid with proper attributes' do
