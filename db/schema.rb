@@ -11,7 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150404074100) do
+ActiveRecord::Schema.define(version: 20150405061715) do
+
+  create_table "bed_days", force: true do |t|
+    t.integer  "client_id"
+    t.integer  "remaining"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "bed_days", ["client_id"], name: "index_bed_days_on_client_id"
+
+  create_table "beddays", force: true do |t|
+    t.integer  "remaining"
+    t.integer  "client_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "beddays", ["client_id"], name: "index_beddays_on_client_id"
 
   create_table "clients", force: true do |t|
     t.string   "name"

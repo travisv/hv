@@ -2,6 +2,6 @@
 <ol><% @clients.each do |client| %>
   <li><strong><%= client.name %></strong></li>
     <% client.homevisits.all.each do |homevisit| %>
-      <ul class='list-unstyled'><li><%= homevisit.departure_date %> - <%= homevisit.return_date %></li></ul>
+      <ul class='list-unstyled'><li><%= homevisit.departure_date %> - <%= homevisit.return_date %> Homevisit length: <%= homevisit.length %> <%= link_to 'Delete Homevisit', homevisit_path(homevisit), method: :delete %></li></ul>
     <% end %>
   <% end %></ol>

@@ -1,5 +1,6 @@
 class HomevisitsController < ApplicationController
-  before_action :find_client, except: :index
+  before_action :find_client, except: [:index, :destroy]
+  before_action :find_homevisit, only: [:edit, :update, :destroy]
 
   def new
     @homevisit = @client.homevisits.new
@@ -8,6 +9,7 @@ class HomevisitsController < ApplicationController
   def create
     @homevisit = @client.homevisits.new(homevisit_params)
     if @homevisit.save
+      flash[:success] = 'New Homevisit Succesfully Added'
       redirect_to homevisits_path
     else
       render 'new'
@@ -16,7 +18,6 @@ class HomevisitsController < ApplicationController
 
   def index
     @clients = Client.order(:created_at)
-    @homevisits = Homevisit.order(:departure_date)
   end
 
   def show
@@ -26,15 +27,22 @@ class HomevisitsController < ApplicationController
   end
 
   def update
+    @homevisit.update(homevisit_params)
   end
 
   def destroy
+    @homevisit.destroy
+    redirect_to homevisits_path
   end
 
   private
 
   def find_client
     @client = Client.find(params[:client_id])
+  end
+
+  def find_homevisit
+    @homevisit = Homevisit.find(params[:id])
   end
 
   def homevisit_params

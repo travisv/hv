@@ -30,4 +30,8 @@ class HomevisitTest < ActiveSupport::TestCase
     @homevisit.return_date = '19a-1'
     assert !@homevisit.valid?
   end
+
+  test 'homevisit should calculate its length' do
+    assert_equal 2, @homevisit.length
+  end
 end

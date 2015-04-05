@@ -3,7 +3,7 @@ Hv::Application.routes.draw do
   resources :clients do
     resources :homevisits, only: [:new, :create, :edit, :update, :destroy]
   end
-  resources :homevisits, only: :index
+  resources :homevisits, only: [:index, :destroy]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
