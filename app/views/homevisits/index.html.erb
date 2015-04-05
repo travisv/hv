@@ -1,7 +1,7 @@
 <h1 class='text-center'>Homevisits Index</h1>
 <ol><% @clients.each do |client| %>
-  <li><%= client.name %></li>
+  <li><strong><%= client.name %></strong></li>
     <% client.homevisits.all.each do |homevisit| %>
-      <ul><li><%= homevisit.departure_date %> - <%= homevisit.return_date %></li></ul>
+      <ul class='list-unstyled'><li><%= homevisit.departure_date %> - <%= homevisit.return_date %></li></ul>
     <% end %>
   <% end %></ol>

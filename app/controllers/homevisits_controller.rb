@@ -8,12 +8,14 @@ class HomevisitsController < ApplicationController
   def create
     @homevisit = @client.homevisits.new(homevisit_params)
     if @homevisit.save
-      redirect_to 'index'
+      redirect_to homevisits_path
+    else
+      render 'new'
     end
   end
 
   def index
-    @clients = Client.all
+    @clients = Client.order(:created_at)
     @homevisits = Homevisit.order(:departure_date)
   end
 

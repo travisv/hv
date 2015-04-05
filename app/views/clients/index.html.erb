@@ -1,6 +1,6 @@
 <h1 class='text-center'>Clients Index</h1>
 <% @clients.each do |client| %>
-  <ul>
+  <ul class='list-unstyled'>
     <li>
       <%= link_to client.name, client_path(client) %> - <%= client.titleXIX %>
     </li>

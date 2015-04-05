@@ -18,7 +18,7 @@ class ClientsController < ApplicationController
   end
 
   def index
-    @clients = Client.all
+    @clients = Client.order(:created_at)
   end
 
   def edit

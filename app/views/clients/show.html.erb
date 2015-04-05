@@ -1,5 +1,8 @@
 <h3><%= @client.name %></h3>
 <p><%= @client.titleXIX %></p>
 
-<%= link_to 'Edit Client', edit_client_path %>
-<%= link_to 'Delete Client', client_path, method: :delete %>
+<ul class='list-unstyled'>
+  <li><%= link_to 'New Homevisit', new_client_homevisit_path(@client) %></li>
+  <li><%= link_to 'Edit Client', edit_client_path %></li>
+  <li><%= link_to 'Delete Client', client_path, method: :delete %></li>
+</ul>
