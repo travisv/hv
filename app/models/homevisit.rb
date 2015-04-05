@@ -4,7 +4,9 @@ class Homevisit < ActiveRecord::Base
   validates :departure_date, presence: true
   validates :return_date, presence: true
 
-  def length
+  scope :client_hvs, -> (client) { where(client_id: client) }
+
+  def days
     (self.return_date - self.departure_date).to_i
   end
 end
