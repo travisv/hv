@@ -16,11 +16,10 @@ class Client < ActiveRecord::Base
   end
 
   def days_gone
-    time = []
-    hvs.each do |hv|
-      time << hv.return_date - hv.departure_date
+    days_gone = hvs.each.map do |hv|
+      hv.return_date - hv.departure_date
     end
-    (time.inject(:+)).to_i
+    (days_gone.inject(:+)).to_i
   end
 
   def current_beddays

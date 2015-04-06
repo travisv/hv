@@ -32,6 +32,6 @@ class HomevisitTest < ActiveSupport::TestCase
   end
 
   test 'homevisit should calculate its length' do
-    assert_equal 2, @homevisit.length
+    assert_equal 2, @homevisit.days
   end
 end
